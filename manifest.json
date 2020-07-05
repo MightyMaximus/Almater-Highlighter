@@ -1,27 +1,38 @@
 {
   "manifest_version": 2,
 
-  "name": "Highlighter",
+  "name": "Almater Highlighter",
   "version": "1.0.0",
   "description": "Chrome extension that highlights & stores text from websites and pdfs",
-  "homepage_url": "https://github.com/MightyMaximus/Highlighter",
-  "permissions": ["storage"],
+  "homepage_url": "https://github.com/MightyMaximus/Almater-Highlighter",
+  "permissions": ["activeTab","storage"],
+  "optional_permissions": ["<all_urls>", "tabs"],
   "icons": {
-    "16": "images/highlighter-logo-16.png",
-    "32": "images/highlighter-logo-32.png",
-    "48": "images/highlighter-logo-48.png",
-    "96": "images/highlighter-logo-96.png",
-    "128": "images/highlighter-logo-128.png"
+    "16": "./images/highlighter-logo-16.png",
+    "32": "./images/highlighter-logo-32.png",
+    "48": "./images/highlighter-logo-48.png",
+    "96": "./images/highlighter-logo-96.png",
+    "128": "./images/highlighter-logo-128.png"
   },
   "background": {
     "persistent": false,
     "scripts": ["js/highlight.js"]
   },
   "options_ui": {
-    "page": "options.html",
+    "page": "./options.html",
     "chrome_style": true
   },
   "browser_action": {
-    "default_icon": "images/highlighter-logo-96.png"
+    "default_title": "Almater Highlighter",
+    "default_icon": "./images/highlighter-logo-gs-96.png"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+H",
+        "mac": "MacCtrl+Shift+H"
+      },
+      "description": "Toggle Highlighter"
+    }
   }
 }
